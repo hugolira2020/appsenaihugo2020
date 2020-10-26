@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cadastro de Carro</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="fecharModal()" color="dark">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="form" (ngSubmit)="submitForm()">
+    <ion-item>
+      <ion-label>Nome / Modelo </ion-label>
+      <ion-input
+        formControlName="nome"
+        type="text"
+        placeholder="Nome / Modelo do veiculo "
+        required
+      ></ion-input>
+    </ion-item>
+
+    <!--  <ion-item>
+      <ion-label>Marca</ion-label>
+      <ion-input type="text" placeholder="Digite a Marca" required></ion-input>
+    </ion-item> -->
+
+    <ion-item>
+      <ion-label>Marca</ion-label>
+      <ion-select
+        formControlName="marca"
+        value="ACURA"
+        okText="Okay"
+        cancelText="Dismiss"
+      >
+        <ion-select-option value="ACURA">ACURA</ion-select-option>
+        <ion-select-option value="ALFA ROMEO">ALFA ROMEO</ion-select-option>
+        <ion-select-option value="ASTON MARTIN">ASTON MARTIN</ion-select-option>
+        <ion-select-option value="AUDI">AUDI</ion-select-option>
+        <ion-select-option value="BENTLEY">BENTLEY</ion-select-option>
+        <ion-select-option value="BUGATTI">BUGATTI</ion-select-option>
+        <ion-select-option value="BUICK">BUICK</ion-select-option>
+        <ion-select-option value="CADILLAC">CADILLAC</ion-select-option>
+        <ion-select-option value="CHEVROLET">CHEVROLET</ion-select-option>
+        <ion-select-option value="FIAT">FIAT</ion-select-option>
+        <ion-select-option value="CITROEN">CITROEN</ion-select-option>
+        <ion-select-option value="CHRYSLER">CHRYSLER</ion-select-option>
+        <ion-select-option value="PEUGEOT">PEUGEOT</ion-select-option>
+        <ion-select-option value="PLYMOUTH">PLYMOUTH</ion-select-option>
+        <ion-select-option value="PORSCHE">PORSCHE</ion-select-option>
+        <ion-select-option value="ALFA ROMEO">RENAULT</ion-select-option>
+        <ion-select-option value="SAAB">SAAB</ion-select-option>
+        <ion-select-option value="SCION">SCION</ion-select-option>
+        <ion-select-option value="SMART">SMART</ion-select-option>
+        <ion-select-option value="TESLA">TESLA</ion-select-option>
+        <ion-select-option value="TOYOTA">TOYOTA</ion-select-option>
+        <ion-select-option value="TROLLER">TROLLER</ion-select-option>
+        <ion-select-option value="VOLKSWAGEN">VOLKSWAGEN</ion-select-option>
+        <ion-select-option value="VOLVO">VOLVO</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Potencia</ion-label>
+      <ion-input
+        formControlName="potencia"
+        type="text"
+        placeholder="Digite a Potencia"
+        required
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Ano de Lançamento</ion-label>
+      <ion-input
+        formControlName="ano"
+        type="text"
+        placeholder="Digite o Ano"
+        required
+      ></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="success" expand="block">
+          {{isEdit === true ?'Atualizar' : 'Salvar' }}
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
