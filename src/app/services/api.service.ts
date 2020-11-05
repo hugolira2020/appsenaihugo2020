@@ -1,9 +1,9 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { Entidade } from "../models/entidade";
+//import { Entidade } from "../models/entidade";
 import { Observable } from "rxjs";
 import { ResponseApientidade } from "../models/response-apientidade";
-import { ResponseEntidade } from "../models/response-entidade";
+//import { ResponseEntidade } from "../models/response-entidade";
 
 @Injectable({
   providedIn: "root",
